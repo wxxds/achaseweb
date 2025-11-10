@@ -1,0 +1,56 @@
+
+body {
+  transition: background 1.6s ease-in-out;
+}
+
+/* Pulsating drop shadow animation */
+@keyframes pulseShadow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(66, 66, 240, 0.97));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgb(48, 34, 243));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(23, 48, 214, 0.7));
+  }
+}
+
+.pulse-shadow {
+  animation: pulseShadow 1.5s infinite ease-in-out;
+}
+
+
+.modal-header{
+border-bottom:solid #646567 !important; 
+    background: linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glossy_header, .modal-content{
+ 
+   max-width: fit-content !important;
+    margin: auto !important;
+  background: linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 100px;
+}
+
+
+.journey p{
+    font-size:1.2rem ;
+}
+
+body.skill-gradient-1 { background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);}
+body.skill-gradient-2 { background-image: linear-gradient(-225deg, #CBBACC 0%, #2580B3 100%);}
+body.skill-gradient-3 { background: linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%), linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
+ background-blend-mode: normal,color-burn;}
+body.skill-gradient-4 { background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);}
+body.skill-gradient-5 { background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);}
+body.skill-gradient-6 { background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);}
+
+

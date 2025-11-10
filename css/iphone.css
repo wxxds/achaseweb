@@ -1,0 +1,107 @@
+:root{
+  --blue: #007aff;          /* iOS blue */
+  --blue-2: #0a84ff;        /* slightly lighter for gradient */
+  --incoming: #f1f0f0;      /* incoming gray */
+  --text-light: #ffffff;
+  --text-dark: #1c1c1e;
+  --radius: 18px;
+  --max-w: 70ch;
+  --shadow: 0 6px 10px rgba(0,0,0,0.12);
+  --tail-size: 12px;
+}
+
+*{box-sizing:border-box}
+body{font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background:#fff; padding:24px; color:var(--text-dark)}
+
+.chat{display:flex;flex-direction:column;gap:12px;max-width:540px}
+
+/* Base bubble */
+.bubble{
+  display:inline-flex;
+  align-items:flex-end;
+  gap:10px;
+  padding:10px 14px;
+  border-radius:var(--radius);
+  max-width:var(--max-w);
+  position:relative;
+  line-height:1.3;
+  word-wrap:break-word;
+  box-shadow: none;
+}
+
+/* timestamp styling */
+.bubble time{
+  font-size:11px;
+  opacity:.7;
+  align-self:flex-end;
+  margin-left:6px;
+}
+
+/* Incoming (left) */
+.bubble.incoming{
+  background: linear-gradient(180deg, var(--incoming), #ececec);
+  color:var(--text-dark);
+  margin-right:auto;
+  border-top-left-radius:6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+/* Outgoing (right, blue iMessage like) */
+.bubble.outgoing{
+  background: linear-gradient(180deg, var(--blue-2), var(--blue));
+  color:var(--text-light);
+  margin-left:auto;
+  box-shadow: var(--shadow);
+  border-bottom-right-radius:6px;
+}
+
+/* Tail for incoming */
+.bubble.incoming::after{
+  content:"";
+  position:absolute;
+  left:-6px;
+  bottom:6px;
+  width:0;
+  height:0;
+  border-top: var(--tail-size) solid transparent;
+  border-right: 10px solid var(--incoming);
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,0.02));
+  transform: translateX(-2px);
+  border-bottom: var(--tail-size) solid transparent;
+}
+
+/* Tail for outgoing (blue) */
+.bubble.outgoing::after{
+  content:"";
+  position:absolute;
+  right:-6px;
+  bottom:6px;
+  width:0;
+  height:0;
+  border-top: var(--tail-size) solid transparent;
+  border-left: 10px solid var(--blue);
+  border-bottom: var(--tail-size) solid transparent;
+  transform: translateX(2px);
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.08));
+}
+
+/* message text styling */
+.bubble .text{font-size:15px;padding:2px 0;}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 540px;
+  margin: 0px auto;
+}
+
+
+
+/* responsive small screens: narrower bubbles */
+@media (max-width:420px){
+  :root{ --max-w: 60ch; --radius:16px }
+  .bubble{ padding:10px 12px }
+  .bubble time{ display:none } /* hide timestamp on tiny screens */
+}
+
