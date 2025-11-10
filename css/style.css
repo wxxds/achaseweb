@@ -40,6 +40,17 @@ border-bottom:solid #646567 !important;
     border-radius: 100px;
 }
 
+.skill{
+  cursor: pointer;
+  transition: background 0.9s ease, box-shadow 0.3s ease;
+  padding-top: 1rem;
+}
+
+.skill:hover{
+background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
+border-radius: 8px;
+}
+
 
 .journey p{
     font-size:1.2rem ;

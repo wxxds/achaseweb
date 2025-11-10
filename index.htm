@@ -199,88 +199,6 @@
 </div>
 
 </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.getElementById("navbar");
-  const brandTexts = document.querySelectorAll(".navbar-brand .hide_text");
-  const svgLogo = document.querySelector(".navbar-brand svg");
-
-  // 🔹 Function to start/stop SVG pulse
-  const startPulseShadow = () => svgLogo.classList.add("pulse-shadow");
-  const stopPulseShadow = () => {
-    svgLogo.classList.remove("pulse-shadow");
-    svgLogo.style.filter = "none";
-  };
-
-  // 🔹 Function to make navbar sticky/glossy
-  const makeNavbarGlossy = () => navbar.classList.add("fixed-bottom", "glossy_header", "text-black");
-  const removeWhite = () => navbar.classList.remove("bg-body-tertiary");
-
-  // 🔹 Function to toggle logo visibility
-  const toggleLogo = () => {
-    brandTexts.forEach(el => el.classList.toggle("d-none"));
-    svgLogo.classList.toggle("d-none");
-    svgLogo.classList.toggle("d-block");
-  };
-
-  // 🔹 Attach click handlers to all skill divs
-  const skillDivs = document.querySelectorAll(".adobe, .end, .server, .ai, .dj, .music");
-
-  skillDivs.forEach(div => {
-    const firstClass = div.classList[0]; // e.g. "adobe", "end", "server"
-    const modalId = `${firstClass}Modal`; // e.g. "adobeModal"
-    const modalEl = document.getElementById(modalId);
-
-    if (modalEl) {
-      const modal = new bootstrap.Modal(modalEl);
-
-      // On click: toggle logo + pulse + open modal
-      div.addEventListener("click", () => {
-        toggleLogo();
-        startPulseShadow();
-        modal.show();
-      });
-
-      // When modal closes: stop pulse + make navbar glossy
-      modalEl.addEventListener("hidden.bs.modal", () => {
-        stopPulseShadow();
-        makeNavbarGlossy();
-        removeWhite();
-      });
-    }
-  });
-});
-</script>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const skillElements = document.querySelectorAll(".skill");
-  const body = document.body;
-  let gradientIndex = 0;
-  const maxGradients = 6;
-
-  skillElements.forEach(skill => {
-    skill.addEventListener("click", () => {
-      gradientIndex = (gradientIndex % maxGradients) + 1;
-      const gradientClass = `skill-gradient-${gradientIndex}`;
-
-      // Remove previous skill-gradient classes before adding a new one
-      body.classList.forEach(cls => {
-        if (cls.startsWith("skill-gradient-")) {
-          body.classList.remove(cls);
-        }
-      });
-
-      body.classList.add(gradientClass);
-      console.log(`Added ${gradientClass} to body`);
-    });
-  });
-});
-</script>
 
 
 <!-- Empty Bootstrap Modal -->
@@ -323,14 +241,45 @@ Your browser does not support the video tag.
 </div>
 
 <!-- End-to-End Development Modal -->
-<div class="modal fade node_1 modal-lg " id="endModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-     <div class="modal-content bg-dark bg-opacity-10">
-      <div class="modal-header">
-        <h5 class="modal-title">End-to-End Development</h5>
+<div class="modal modal-lg fade node_1" id="endModal" tabindex="-1" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark bg-opacity-10">
+      <div class="modal-header bg-opacity-50">
+<span class="badge rounded-pill text-bg-info m-1 bg">Terminal</span>
+<span class="badge rounded-pill text-bg-light m-1">GitHub</span>
+<span class="badge rounded-pill text-bg-dark m-1">Containerized</span>
+
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body"></div>
+      <div class="modal-body">
+       <div class="chat" role="alert">
+   <div class="bubble incoming">
+            <div class="text">
+Wow! You are super computer savy. 
+              </div>
+              </div>
+
+                 <div class="bubble incoming">
+            <div class="text">
+How did you learn terminal commands?
+              </div>
+              </div>
+
+          <div class="bubble outgoing">
+            <div class="text">
+When I was working for Accenture, I was starting to use React js.  </div> 
+  </div>
+    <div class="bubble outgoing">
+  <div class="text">
+Some of the development required Node js commands, then I started getting used to using terminal for everything.</div>
+</div>
+</div>
+         <video class="img-fluid mb-2 mt-2" autoplay muted>
+  <source src="./images/videos/terminal.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+      </div>
     </div>
   </div>
 </div>
@@ -499,7 +448,86 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.getElementById("navbar");
+  const brandTexts = document.querySelectorAll(".navbar-brand .hide_text");
+  const svgLogo = document.querySelector(".navbar-brand svg");
+
+  // 🔹 Function to start/stop SVG pulse
+  const startPulseShadow = () => svgLogo.classList.add("pulse-shadow");
+  const stopPulseShadow = () => {
+    svgLogo.classList.remove("pulse-shadow");
+    svgLogo.style.filter = "none";
+  };
+
+  // 🔹 Function to make navbar sticky/glossy
+  const makeNavbarGlossy = () => navbar.classList.add("fixed-top", "glossy_header", "mt-3");
+  const removeWhite = () => navbar.classList.remove("bg-body-tertiary");
+
+  // 🔹 Function to toggle logo visibility
+  const toggleLogo = () => {
+    brandTexts.forEach(el => el.classList.toggle("d-none"));
+    svgLogo.classList.toggle("d-none");
+    svgLogo.classList.toggle("d-block");
+  };
+
+  // 🔹 Attach click handlers to all skill divs
+  const skillDivs = document.querySelectorAll(".adobe, .end, .server, .ai, .dj, .music");
+
+  skillDivs.forEach(div => {
+    const firstClass = div.classList[0]; // e.g. "adobe", "end", "server"
+    const modalId = `${firstClass}Modal`; // e.g. "adobeModal"
+    const modalEl = document.getElementById(modalId);
+
+    if (modalEl) {
+      const modal = new bootstrap.Modal(modalEl);
+
+      // On click: toggle logo + pulse + open modal
+      div.addEventListener("click", () => {
+        toggleLogo();
+        startPulseShadow();
+        modal.show();
+      });
+
+      // When modal closes: stop pulse + make navbar glossy
+      modalEl.addEventListener("hidden.bs.modal", () => {
+        stopPulseShadow();
+        makeNavbarGlossy();
+        removeWhite();
+      });
+    }
+  });
+});
+</script>
 
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const skillElements = document.querySelectorAll(".skill");
+  const body = document.body;
+  let gradientIndex = 0;
+  const maxGradients = 6;
+
+  skillElements.forEach(skill => {
+    skill.addEventListener("click", () => {
+      gradientIndex = (gradientIndex % maxGradients) + 1;
+      const gradientClass = `skill-gradient-${gradientIndex}`;
+
+      // Remove previous skill-gradient classes before adding a new one
+      body.classList.forEach(cls => {
+        if (cls.startsWith("skill-gradient-")) {
+          body.classList.remove(cls);
+        }
+      });
+
+      body.classList.add(gradientClass);
+      console.log(`Added ${gradientClass} to body`);
+    });
+  });
+});
+</script>
   </body>
 </html>
