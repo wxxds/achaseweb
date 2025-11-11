@@ -3,6 +3,14 @@ body {
   transition: background 1.6s ease-in-out;
 }
 
+h1,h2,h3,h4,h5{
+
+ font-family: "Stack Sans Text", sans-serif;   
+}
+
+h3{
+  color:#444444 !important;
+}
 /* Pulsating drop shadow animation */
 @keyframes pulseShadow {
   0% {
@@ -51,8 +59,8 @@ border-bottom:solid #646567 !important;
 }
 
 .skill:hover{
-background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
-border-radius: 8px;
+background: linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%), linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
+  border-radius: 8px;
 }
 
 
@@ -60,13 +68,13 @@ border-radius: 8px;
     font-size:1.2rem ;
 }
 
-body.skill-gradient-1 { background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);}
+body.skill-gradient-3 { background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);}
 body.skill-gradient-2 { background-image: linear-gradient(-225deg, #CBBACC 0%, #2580B3 100%);}
-body.skill-gradient-3 { background: linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%), linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
+body.skill-gradient-1 { background: linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%), linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
  background-blend-mode: normal,color-burn;}
-body.skill-gradient-4 { background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);}
+body.skill-gradient-6 { background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);}
 body.skill-gradient-5 { background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);}
-body.skill-gradient-6 { background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);}
+body.skill-gradient-4 { background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);}
 
 
 /* Timeline container */
