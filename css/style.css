@@ -31,13 +31,17 @@ border-bottom:solid #646567 !important;
 
 .glossy_header, .modal-content{
  
-   max-width: fit-content !important;
+
     margin: auto !important;
   background: linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
   backdrop-filter: blur(6px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: background 0.3s ease, box-shadow 0.3s ease;
     border-radius: 100px;
+}
+
+.glossy_header{
+     max-width: fit-content !important;
 }
 
 .skill{
@@ -65,3 +69,58 @@ body.skill-gradient-5 { background-image: linear-gradient(to top, #6a85b6 0%, #b
 body.skill-gradient-6 { background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);}
 
 
+/* Timeline container */
+.journey {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 3px solid rgba(0, 123, 255, 0.3); /* light blue line */
+  margin-left: 0rem;
+}
+
+/* Timeline points (the h5 tags) */
+.journey h5 {
+  position: relative;
+  margin-top: 2.5rem;
+  color: #0d6efd; /* Bootstrap primary */
+  font-weight: 600;
+}
+
+/* The circle bullet for each h5 */
+.journey h5::before {
+  content: "";
+  position: absolute;
+  left: -2.5rem;
+  top: 0.4rem;
+  width: 14px;
+  height: 14px;
+  background-color: #0d6efd;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
+}
+
+/* Line continuation (so it looks connected) */
+.journey h5:not(:last-of-type)::after {
+  content: "";
+  position: absolute;
+  left: -1.9rem;
+  top: 1.5rem;
+  width: 2px;
+  height: 60px;
+  background: rgba(0, 123, 255, 0.2);
+}
+
+/* Paragraphs following h5 - indented for clarity */
+.journey p {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* Optional: subtle hover glow on timeline points */
+.journey h5:hover::before {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.4);
+  transition: all 0.3s ease;
+}
